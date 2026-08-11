@@ -10,106 +10,111 @@
 <body class="bg-background text-primary font-sans antialiased">
     <!-- Sticky Navbar -->
     <header class="sticky top-0 z-50 bg-card border-b border-border">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-accent tracking-tight">Dani Kaharu</h1>
-            <nav class="hidden md:flex space-x-8">
+        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex justify-between items-center w-full md:w-auto mb-4 md:mb-0">
+                <h1 class="text-2xl font-bold text-accent tracking-tight">Dani Kaharu</h1>
+                <a href="assets/cv.pdf" class="md:hidden bg-accent text-white px-5 py-2 font-medium hover:bg-blue-700 transition-colors" download>Download CV</a>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 w-full md:w-auto">
                 <a href="#about" class="text-secondary hover:text-primary transition-colors">About</a>
                 <a href="#experience" class="text-secondary hover:text-primary transition-colors">Experience</a>
                 <a href="#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
                 <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
             </nav>
-            <a href="assets/cv.pdf" class="bg-accent text-white px-5 py-2 font-medium hover:bg-blue-700 transition-colors" download>Download CV</a>
+            
+            <a href="assets/cv.pdf" class="hidden md:inline-block bg-accent text-white px-5 py-2 font-medium hover:bg-blue-700 transition-colors" download>Download CV</a>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="about" class="container mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
-            <h2 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
+        <section id="about" class="container mx-auto px-6 py-24 lg:py-32 flex flex-col items-center text-center">
+            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-tight max-w-4xl">
                 Backend Systems.<br>Built to <span class="text-accent">Scale</span>.
             </h2>
-            <p class="text-xl text-secondary max-w-2xl mb-10 leading-relaxed">
+            <p class="text-xl md:text-2xl text-secondary max-w-prose mb-12 leading-relaxed">
                 Hi, I'm Dani. A Backend Web Developer with over 3 years of experience specializing in robust architectures, government web applications, and high-performance APIs.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#projects" class="bg-accent text-white px-8 py-3 font-medium hover:bg-blue-700 transition-colors">View Projects</a>
-                <a href="#contact" class="border border-border text-primary bg-card hover:bg-gray-50 px-8 py-3 font-medium transition-colors">Contact Me</a>
+            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a href="#projects" class="bg-accent text-white px-8 py-4 text-lg font-medium hover:bg-blue-700 transition-colors">View Projects</a>
+                <a href="#contact" class="border border-border text-primary bg-card hover:bg-gray-50 px-8 py-4 text-lg font-medium transition-colors">Contact Me</a>
             </div>
         </section>
 
         <!-- Metrics Section -->
-        <section id="experience" class="container mx-auto px-6 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section id="experience" class="container mx-auto px-6 py-16 lg:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Metric 1 -->
-                <div class="bg-card border border-border p-8 text-center">
-                    <div class="text-4xl font-bold text-accent mb-2">3+</div>
-                    <div class="text-primary font-medium text-lg mb-1">Years Experience</div>
-                    <div class="text-secondary text-sm">Professional backend development</div>
+                <div class="bg-card border border-border p-8 lg:p-10 text-center">
+                    <div class="text-5xl font-bold text-accent mb-4">3+</div>
+                    <div class="text-primary font-bold text-xl mb-2">Years Experience</div>
+                    <div class="text-secondary text-base leading-relaxed">Professional backend development</div>
                 </div>
                 <!-- Metric 2 -->
-                <div class="bg-card border border-border p-8 text-center">
-                    <div class="text-4xl font-bold text-accent mb-2">10+</div>
-                    <div class="text-primary font-medium text-lg mb-1">Enterprise Projects</div>
-                    <div class="text-secondary text-sm">Including Gov infrastructure</div>
+                <div class="bg-card border border-border p-8 lg:p-10 text-center">
+                    <div class="text-5xl font-bold text-accent mb-4">10+</div>
+                    <div class="text-primary font-bold text-xl mb-2">Enterprise Projects</div>
+                    <div class="text-secondary text-base leading-relaxed">Including Gov infrastructure</div>
                 </div>
                 <!-- Metric 3 -->
-                <div class="bg-card border border-border p-8 text-center">
-                    <div class="text-4xl font-bold text-accent mb-2">Core</div>
-                    <div class="text-primary font-medium text-lg mb-1">Tech Stack</div>
-                    <div class="text-secondary text-sm">Laravel, Node.js, SQL</div>
+                <div class="bg-card border border-border p-8 lg:p-10 text-center">
+                    <div class="text-5xl font-bold text-accent mb-4">Core</div>
+                    <div class="text-primary font-bold text-xl mb-2">Tech Stack</div>
+                    <div class="text-secondary text-base leading-relaxed">Laravel, Node.js, SQL</div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="container mx-auto px-6 py-24">
-            <div class="mb-12">
-                <h3 class="text-3xl font-bold mb-4">Featured Projects</h3>
-                <p class="text-secondary max-w-xl">A selection of my recent work focusing on complex backend logic, database optimization, and scalable server architecture.</p>
+        <section id="projects" class="container mx-auto px-6 py-24 lg:py-32">
+            <div class="mb-16">
+                <h3 class="text-4xl font-bold tracking-tight mb-6">Featured Projects</h3>
+                <p class="text-xl text-secondary max-w-prose leading-relaxed">A selection of my recent work focusing on complex backend logic, database optimization, and scalable server architecture.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
                 <!-- Project Card 1 -->
                 <div class="bg-card border border-border flex flex-col">
-                    <div class="h-48 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium">GovApp Dashboard</span>
+                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
+                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">GovApp Dashboard</span>
                     </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h4 class="text-xl font-bold mb-2">Citizen Portal API</h4>
-                        <p class="text-secondary mb-6 flex-grow">A high-throughput Laravel REST API serving over 50,000 daily requests. Implemented robust caching and role-based access control.</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Citizen Portal API</h4>
+                        <p class="text-secondary mb-8 flex-grow leading-relaxed">A high-throughput Laravel REST API serving over 50,000 daily requests. Implemented robust caching and role-based access control.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
+                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 2 -->
                 <div class="bg-card border border-border flex flex-col">
-                    <div class="h-48 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium">DataSync Engine</span>
+                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
+                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">DataSync Engine</span>
                     </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h4 class="text-xl font-bold mb-2">Real-time Sync Service</h4>
-                        <p class="text-secondary mb-6 flex-grow">Node.js microservice handling real-time data synchronization across multiple legacy databases using WebSockets and Redis.</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Real-time Sync Service</h4>
+                        <p class="text-secondary mb-8 flex-grow leading-relaxed">Node.js microservice handling real-time data synchronization across multiple legacy databases using WebSockets and Redis.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
+                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project Card 3 -->
                 <div class="bg-card border border-border flex flex-col">
-                    <div class="h-48 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium">E-Procurement</span>
+                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
+                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">E-Procurement</span>
                     </div>
-                    <div class="p-6 flex-grow flex flex-col">
-                        <h4 class="text-xl font-bold mb-2">Automated Billing System</h4>
-                        <p class="text-secondary mb-6 flex-grow">Automated invoicing and payment gateway integration built on PHP, reducing manual processing time by 80%.</p>
-                        <div class="flex gap-3 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
+                    <div class="p-8 flex-grow flex flex-col">
+                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Automated Billing System</h4>
+                        <p class="text-secondary mb-8 flex-grow leading-relaxed">Automated invoicing and payment gateway integration built on PHP, reducing manual processing time by 80%.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
+                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
+                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -118,15 +123,15 @@
     </main>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-card border-t border-border mt-12 py-12">
+    <footer id="contact" class="bg-card border-t border-border mt-12 py-16 lg:py-24">
         <div class="container mx-auto px-6 text-center">
-            <h3 class="text-2xl font-bold mb-6">Let's Build Together</h3>
-            <p class="text-secondary mb-8 max-w-md mx-auto">Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            <div class="flex justify-center gap-4 mb-12">
-                <a href="mailto:hello@example.com" class="bg-accent text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors">Say Hello</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="border border-border text-primary bg-card hover:bg-gray-50 px-6 py-3 font-medium transition-colors">LinkedIn</a>
+            <h3 class="text-3xl font-bold mb-6 tracking-tight">Let's Build Together</h3>
+            <p class="text-secondary mb-10 max-w-md mx-auto leading-relaxed">Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+                <a href="mailto:hello@example.com" class="bg-accent text-white px-8 py-4 text-lg font-medium hover:bg-blue-700 transition-colors">Say Hello</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="border border-border text-primary bg-card hover:bg-gray-50 px-8 py-4 text-lg font-medium transition-colors">LinkedIn</a>
             </div>
-            <div class="border-t border-border pt-8 text-secondary text-sm">
+            <div class="border-t border-border pt-10 text-secondary text-sm">
                 <p>&copy; 2026 Dani Kaharu. Designed with intent. Built for performance.</p>
             </div>
         </div>
