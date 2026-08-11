@@ -1,0 +1,31 @@
+{
+  "name": "my-portofolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./src/css/style.css -o ./assets/style.css --minify",
+    "watch:css": "tailwindcss -i ./src/css/style.css -o ./assets/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danikaharu/my-portofolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/danikaharu/my-portofolio/issues"
+  },
+  "homepage": "https://github.com/danikaharu/my-portofolio#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.19"
+  }
+}
