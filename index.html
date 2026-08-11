@@ -3,138 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dani Kaharu - Backend Web Developer Portfolio">
-    <title>Dani Kaharu - Backend Developer</title>
+    <meta name="description" content="Ramadan Kaharu - Backend Web Developer Portfolio">
+    <title>Ramadan Kaharu - Backend Developer</title>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-background text-primary font-sans antialiased">
-    <!-- Sticky Navbar -->
-    <header class="sticky top-0 z-50 bg-card border-b border-border">
-        <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+<body class="bg-background text-primary antialiased">
+    <!-- Navbar -->
+    <header class="border-b border-gray-100 bg-white">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center">
             <div class="flex justify-between items-center w-full md:w-auto mb-4 md:mb-0">
-                <h1 class="text-2xl font-bold text-accent tracking-tight">Dani Kaharu</h1>
-                <a href="assets/cv.pdf" class="md:hidden bg-accent text-white px-5 py-2 font-medium hover:bg-blue-700 transition-colors" download>Download CV</a>
+                <div class="font-bold tracking-tight text-lg flex items-center">
+                    RAMADAN KAHARU<span class="text-blue-600 font-black">.</span>
+                </div>
+                <a href="assets/cv.pdf" class="md:hidden flex items-center gap-2 border border-gray-200 bg-white text-gray-800 rounded-lg px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors" download>
+                    <i data-lucide="download" class="w-4 h-4"></i> Download CV
+                </a>
             </div>
             
-            <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 w-full md:w-auto">
-                <a href="#about" class="text-secondary hover:text-primary transition-colors">About</a>
-                <a href="#experience" class="text-secondary hover:text-primary transition-colors">Experience</a>
-                <a href="#projects" class="text-secondary hover:text-primary transition-colors">Projects</a>
-                <a href="#contact" class="text-secondary hover:text-primary transition-colors">Contact</a>
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-2 w-full md:w-auto text-sm font-medium text-gray-600">
+                <a href="#about" class="hover:text-gray-900 transition-colors">About</a>
+                <a href="#projects" class="hover:text-gray-900 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-gray-900 transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-gray-900 transition-colors">Contact</a>
             </nav>
             
-            <a href="assets/cv.pdf" class="hidden md:inline-block bg-accent text-white px-5 py-2 font-medium hover:bg-blue-700 transition-colors" download>Download CV</a>
+            <a href="assets/cv.pdf" class="hidden md:flex items-center gap-2 border border-gray-200 bg-white text-gray-800 rounded-lg px-4 py-2 text-sm font-medium hover:bg-gray-50 transition-colors" download>
+                <i data-lucide="download" class="w-4 h-4"></i> Download CV
+            </a>
         </div>
     </header>
 
-    <main>
+    <main class="max-w-5xl mx-auto px-6">
         <!-- Hero Section -->
-        <section id="about" class="container mx-auto px-6 py-24 lg:py-32 flex flex-col items-center text-center">
-            <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 leading-tight max-w-4xl">
-                Backend Systems.<br>Built to <span class="text-accent">Scale</span>.
-            </h2>
-            <p class="text-xl md:text-2xl text-secondary max-w-prose mb-12 leading-relaxed">
-                Hi, I'm Dani. A Backend Web Developer with over 3 years of experience specializing in robust architectures, government web applications, and high-performance APIs.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#projects" class="bg-accent text-white px-8 py-4 text-lg font-medium hover:bg-blue-700 transition-colors">View Projects</a>
-                <a href="#contact" class="border border-border text-primary bg-card hover:bg-gray-50 px-8 py-4 text-lg font-medium transition-colors">Contact Me</a>
+        <section id="about" class="py-20 lg:py-32">
+            <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-3 py-1.5 rounded-full text-sm font-medium mb-8">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span> Open for Opportunities
             </div>
+            
+            <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 mb-6 leading-[1.1] max-w-4xl">
+                Web Developer<br>focused on Backend &<br>Scalable Data Systems.
+            </h1>
+            
+            <p class="text-lg lg:text-xl text-gray-500 max-w-3xl leading-relaxed">
+                3+ years of experience building robust applications with Laravel, CodeIgniter, and REST APIs — including Government Web Applications powering the SPBE and One Data Indonesia initiatives.
+            </p>
         </section>
 
         <!-- Metrics Section -->
-        <section id="experience" class="container mx-auto px-6 py-16 lg:py-24">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <section class="mb-24 lg:mb-32">
+            <div class="border border-gray-200 rounded-2xl bg-white flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200">
                 <!-- Metric 1 -->
-                <div class="bg-card border border-border p-8 lg:p-10 text-center">
-                    <div class="text-5xl font-bold text-accent mb-4">3+</div>
-                    <div class="text-primary font-bold text-xl mb-2">Years Experience</div>
-                    <div class="text-secondary text-base leading-relaxed">Professional backend development</div>
+                <div class="flex-1 p-8 lg:p-10">
+                    <div class="text-3xl font-bold text-gray-900 mb-2">3+ Years</div>
+                    <div class="text-gray-500 text-sm">Professional Experience</div>
                 </div>
                 <!-- Metric 2 -->
-                <div class="bg-card border border-border p-8 lg:p-10 text-center">
-                    <div class="text-5xl font-bold text-accent mb-4">10+</div>
-                    <div class="text-primary font-bold text-xl mb-2">Enterprise Projects</div>
-                    <div class="text-secondary text-base leading-relaxed">Including Gov infrastructure</div>
+                <div class="flex-1 p-8 lg:p-10">
+                    <div class="text-3xl font-bold text-gray-900 mb-2">5+ Web Apps</div>
+                    <div class="text-gray-500 text-sm">Deployed to Production</div>
                 </div>
                 <!-- Metric 3 -->
-                <div class="bg-card border border-border p-8 lg:p-10 text-center">
-                    <div class="text-5xl font-bold text-accent mb-4">Core</div>
-                    <div class="text-primary font-bold text-xl mb-2">Tech Stack</div>
-                    <div class="text-secondary text-base leading-relaxed">Laravel, Node.js, SQL</div>
+                <div class="flex-1 p-8 lg:p-10">
+                    <div class="text-3xl font-bold text-gray-900 mb-2">40%</div>
+                    <div class="text-gray-500 text-sm">Deployment Efficiency Gain</div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="container mx-auto px-6 py-24 lg:py-32">
-            <div class="mb-16">
-                <h3 class="text-4xl font-bold tracking-tight mb-6">Featured Projects</h3>
-                <p class="text-xl text-secondary max-w-prose leading-relaxed">A selection of my recent work focusing on complex backend logic, database optimization, and scalable server architecture.</p>
+        <section id="projects" class="mb-24 lg:mb-32">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Featured Projects</h2>
+                <p class="text-gray-500">Selected work with real-world impact and scale.</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-                <!-- Project Card 1 -->
-                <div class="bg-card border border-border flex flex-col">
-                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">GovApp Dashboard</span>
+            <div class="flex flex-col gap-8">
+                <!-- Project 1 -->
+                <div class="border border-gray-200 rounded-2xl bg-white p-8 lg:p-10">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">Laravel</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">CodeIgniter</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">MySQL</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">REST API</span>
                     </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Citizen Portal API</h4>
-                        <p class="text-secondary mb-8 flex-grow leading-relaxed">A high-throughput Laravel REST API serving over 50,000 daily requests. Implemented robust caching and role-based access control.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="bg-card border border-border flex flex-col">
-                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">DataSync Engine</span>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Real-time Sync Service</h4>
-                        <p class="text-secondary mb-8 flex-grow leading-relaxed">Node.js microservice handling real-time data synchronization across multiple legacy databases using WebSockets and Redis.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
-                        </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Government Web Applications & SPBE Initiative</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-3xl mb-8">
+                        Designed and shipped internal web applications supporting Indonesia's SPBE (Electronic-Based Government System) initiative. Streamlined administrative workflows and cut deployment time by 40% through structured CI pipelines and reusable service layers.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="inline-flex items-center gap-2 bg-blue-600 text-white rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-blue-700 transition-colors">
+                            Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-2 border border-gray-200 bg-white text-gray-800 rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-gray-50 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
                     </div>
                 </div>
 
-                <!-- Project Card 3 -->
-                <div class="bg-card border border-border flex flex-col">
-                    <div class="h-56 bg-gray-100 border-b border-border flex items-center justify-center">
-                        <span class="text-secondary font-medium tracking-wide uppercase text-sm">E-Procurement</span>
+                <!-- Project 2 -->
+                <div class="border border-gray-200 rounded-2xl bg-white p-8 lg:p-10">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">Node.js</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">Express.js</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">REST API</span>
                     </div>
-                    <div class="p-8 flex-grow flex flex-col">
-                        <h4 class="text-2xl font-bold mb-3 tracking-tight">Automated Billing System</h4>
-                        <p class="text-secondary mb-8 flex-grow leading-relaxed">Automated invoicing and payment gateway integration built on PHP, reducing manual processing time by 80%.</p>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-auto">
-                            <a href="#" class="bg-accent text-white px-4 py-3 text-sm font-medium hover:bg-blue-700 transition-colors text-center flex-1">Case Study</a>
-                            <a href="#" class="border border-border text-primary px-4 py-3 text-sm font-medium hover:bg-gray-50 transition-colors text-center flex-1">GitHub</a>
-                        </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Data Governance & Integration (Satu Data Indonesia)</h3>
+                    <p class="text-gray-600 leading-relaxed max-w-3xl mb-8">
+                        Built integration services for the One Data Indonesia program, standardizing data exchange across agencies. Implemented resilient REST endpoints and validation layers to keep interoperable datasets accurate and consistent.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="inline-flex items-center gap-2 bg-blue-600 text-white rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-blue-700 transition-colors">
+                            Case Study <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-2 border border-gray-200 bg-white text-gray-800 rounded-lg px-5 py-2.5 text-sm font-semibold hover:bg-gray-50 transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Certifications -->
+        <section id="skills" class="mb-24 lg:mb-32">
+            <div class="mb-10">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Skills & Certifications</h2>
+                <p class="text-gray-500">The tools and practices I work with every day.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <!-- Backend Skills -->
+                <div class="border border-gray-200 rounded-2xl bg-white p-8">
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-6">Backend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Laravel</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Livewire</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">CodeIgniter</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Node.js</span>
+                    </div>
+                </div>
+                
+                <!-- Database & Tools -->
+                <div class="border border-gray-200 rounded-2xl bg-white p-8">
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-6">Database & Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">MySQL</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Git</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Postman</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Docker</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">AWS</span>
+                    </div>
+                </div>
+
+                <!-- Methodology -->
+                <div class="border border-gray-200 rounded-2xl bg-white p-8">
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-6">Methodology</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">Agile / SCRUM</span>
+                        <span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">SPBE</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="border border-gray-200 rounded-2xl bg-white p-8">
+                <h3 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-6">Certifications</h3>
+                <div class="flex flex-col md:flex-row gap-6 md:gap-12 justify-between">
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-500"></i> AWS Cloud & Gen AI
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-500"></i> Back-End JavaScript — Dicoding
+                    </div>
+                    <div class="flex items-center gap-3 text-gray-700">
+                        <i data-lucide="award" class="w-5 h-5 text-blue-500"></i> Junior Web Developer — DTS
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-card border-t border-border mt-12 py-16 lg:py-24">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-6 tracking-tight">Let's Build Together</h3>
-            <p class="text-secondary mb-10 max-w-md mx-auto leading-relaxed">Currently open for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-                <a href="mailto:hello@example.com" class="bg-accent text-white px-8 py-4 text-lg font-medium hover:bg-blue-700 transition-colors">Say Hello</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="border border-border text-primary bg-card hover:bg-gray-50 px-8 py-4 text-lg font-medium transition-colors">LinkedIn</a>
-            </div>
-            <div class="border-t border-border pt-10 text-secondary text-sm">
-                <p>&copy; 2026 Dani Kaharu. Designed with intent. Built for performance.</p>
+    <!-- Footer CTA -->
+    <footer id="contact" class="max-w-5xl mx-auto px-6 mb-12">
+        <div class="bg-blue-600 rounded-3xl py-16 px-6 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
+            <p class="text-blue-100 max-w-xl mx-auto mb-10 leading-relaxed">
+                Have a backend challenge or a data system that needs to scale? I'm open to new opportunities and collaborations.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="mailto:dani.kaharu17@gmail.com" class="flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
+                    <i data-lucide="mail" class="w-4 h-4"></i> dani.kaharu17@gmail.com
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 border border-blue-400 bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors" aria-label="LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center w-12 h-12 border border-blue-400 bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors" aria-label="GitHub">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
             </div>
         </div>
+        <div class="text-center text-gray-400 text-sm mt-8">
+            &copy; 2026 Ramadan Kaharu. Built with care.
+        </div>
     </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+      lucide.createIcons();
+    </script>
 </body>
 </html>
