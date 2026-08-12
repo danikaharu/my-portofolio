@@ -1,4 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme Toggle Logic
+    const htmlElement = document.documentElement;
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+    const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
+
+    // Check system preference or localStorage
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        htmlElement.classList.add('dark');
+    } else {
+        htmlElement.classList.remove('dark');
+    }
+
+    const toggleTheme = () => {
+        if (htmlElement.classList.contains('dark')) {
+            htmlElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        } else {
+            htmlElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        }
+    };
+
+    if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
+    if (themeToggleDesktop) themeToggleDesktop.addEventListener('click', toggleTheme);
+
     // Helper function for icons (since GitHub and LinkedIn were removed from Lucide core)
     const getIconHTML = (iconName, sizeClass = "w-4 h-4") => {
         if (iconName === 'github') {
@@ -25,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (metricsContainer) {
         metricsContainer.innerHTML = portfolioData.metrics.map(metric => `
             <div class="flex-1 p-8 lg:p-10">
-                <div class="text-3xl font-bold text-gray-900 mb-2">${metric.value}</div>
-                <div class="text-gray-500 text-sm">${metric.label}</div>
+                <div class="text-3xl font-bold text-gray-900 dark:text-white mb-2">${metric.value}</div>
+                <div class="text-gray-500 dark:text-gray-400 text-sm">${metric.label}</div>
             </div>
         `).join('');
     }
@@ -35,20 +60,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.getElementById('projects-container');
     if (projectsContainer) {
         projectsContainer.innerHTML = portfolioData.projects.map(project => `
-            <div class="border border-gray-200 rounded-2xl bg-white p-8 lg:p-10">
+            <div class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300">
                 <div class="flex flex-wrap gap-2 mb-6">
-                    ${project.tags.map(tag => `<span class="bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-md">${tag}</span>`).join('')}
+                    ${project.tags.map(tag => `<span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold px-3 py-1 rounded-md transition-colors">${tag}</span>`).join('')}
                 </div>
-                <h3 class="text-xl font-bold text-gray-900 mb-4">${project.title}</h3>
-                <p class="text-gray-600 leading-relaxed max-w-3xl mb-8">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">${project.title}</h3>
+                <p class="text-gray-600 dark:text-gray-400 leading-relaxed max-w-3xl mb-8">
                     ${project.description}
                 </p>
                 <div class="flex gap-4">
                     ${project.links.map(link => {
                         const baseClasses = "inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors";
                         const linkClasses = link.type === 'case-study' 
-                            ? `${baseClasses} bg-blue-600 text-white hover:bg-blue-700` 
-                            : `${baseClasses} border border-gray-200 bg-white text-gray-800 hover:bg-gray-50`;
+                            ? `${baseClasses} bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500` 
+                            : `${baseClasses} border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700`;
                         
                         // For case-study the icon is on the right, for github it's on the left.
                         const iconHtml = getIconHTML(link.icon, "w-4 h-4");
@@ -67,10 +92,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsContainer = document.getElementById('skills-container');
     if (skillsContainer) {
         skillsContainer.innerHTML = portfolioData.skills.map(skillGroup => `
-            <div class="border border-gray-200 rounded-2xl bg-white p-8">
-                <h3 class="text-sm font-semibold text-gray-500 tracking-widest uppercase mb-6">${skillGroup.category}</h3>
+            <div class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 transition-colors duration-300">
+                <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-widest uppercase mb-6">${skillGroup.category}</h3>
                 <div class="flex flex-wrap gap-3">
-                    ${skillGroup.items.map(item => `<span class="border border-gray-200 bg-white text-gray-700 px-4 py-1.5 rounded-full text-sm">${item}</span>`).join('')}
+                    ${skillGroup.items.map(item => `<span class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm transition-colors">${item}</span>`).join('')}
                 </div>
             </div>
         `).join('');
@@ -80,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const certsContainer = document.getElementById('certifications-container');
     if (certsContainer) {
         certsContainer.innerHTML = portfolioData.certifications.map(cert => `
-            <div class="flex items-center gap-3 text-gray-700">
+            <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300 transition-colors">
                 <i data-lucide="award" class="w-5 h-5 text-blue-500"></i> ${cert}
             </div>
         `).join('');
