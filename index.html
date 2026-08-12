@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/style.css?v=2">
@@ -57,27 +59,27 @@
     <main class="max-w-5xl mx-auto px-6">
         <!-- Hero Section -->
         <section id="about" class="py-20 lg:py-32">
-            <div class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full text-sm font-medium mb-8">
+            <div data-aos="fade-up" data-aos-duration="800" class="inline-flex items-center gap-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 px-3 py-1.5 rounded-full text-sm font-medium mb-8">
                 <span class="w-2 h-2 rounded-full bg-green-500"></span> <span id="hero-availability"></span>
             </div>
             
-            <h1 id="hero-title" class="text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.1] max-w-4xl">
+            <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100" id="hero-title" class="text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-6 leading-[1.1] max-w-4xl">
             </h1>
             
-            <p id="hero-description" class="text-lg lg:text-xl text-gray-500 dark:text-gray-400 max-w-3xl leading-relaxed">
+            <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="200" id="hero-description" class="text-lg lg:text-xl text-gray-500 dark:text-gray-400 max-w-3xl leading-relaxed">
             </p>
         </section>
 
         <!-- Metrics Section -->
         <section class="mb-24 lg:mb-32">
-            <div id="metrics-container" class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800">
+            <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="300" id="metrics-container" class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-200 dark:divide-gray-800">
                 <!-- Injected via JS -->
             </div>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="mb-24 lg:mb-32">
-            <div class="mb-10">
+            <div data-aos="fade-up" data-aos-duration="800" class="mb-10">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Featured Projects</h2>
                 <p class="text-gray-500 dark:text-gray-400">Selected work with real-world impact and scale.</p>
             </div>
@@ -89,7 +91,7 @@
 
         <!-- Skills & Certifications -->
         <section id="skills" class="mb-24 lg:mb-32">
-            <div class="mb-10">
+            <div data-aos="fade-up" data-aos-duration="800" class="mb-10">
                 <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Skills & Certifications</h2>
                 <p class="text-gray-500 dark:text-gray-400">The tools and practices I work with every day.</p>
             </div>
@@ -99,7 +101,7 @@
             </div>
 
             <!-- Certifications -->
-            <div class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8">
+            <div data-aos="fade-up" data-aos-duration="800" class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8">
                 <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-widest uppercase mb-6">Certifications</h3>
                 <div id="certifications-container" class="flex flex-col md:flex-row gap-6 md:gap-12 justify-between">
                     <!-- Injected via JS -->
@@ -110,7 +112,7 @@
 
     <!-- Footer CTA -->
     <footer id="contact" class="max-w-5xl mx-auto px-6 mb-12">
-        <div class="bg-blue-600 rounded-3xl py-16 px-6 text-center text-white">
+        <div data-aos="zoom-in" data-aos-duration="800" class="bg-blue-600 rounded-3xl py-16 px-6 text-center text-white">
             <h2 class="text-3xl font-bold mb-4">Let's Work Together</h2>
             <p class="text-blue-100 max-w-xl mx-auto mb-10 leading-relaxed">
                 Have a backend challenge or a data system that needs to scale? I'm open to new opportunities and collaborations.
@@ -133,8 +135,11 @@
       lucide.createIcons();
     </script>
     
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Dynamic Portfolio Data -->
     <script src="assets/data.js?v=2"></script>
-    <script src="assets/main.js?v=2"></script>
+    <script src="assets/main.js?v=3"></script>
 </body>
 </html>

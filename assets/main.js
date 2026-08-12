@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Render Projects Section
     const projectsContainer = document.getElementById('projects-container');
     if (projectsContainer) {
-        projectsContainer.innerHTML = portfolioData.projects.map(project => `
-            <div class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300">
+        projectsContainer.innerHTML = portfolioData.projects.map((project, index) => `
+            <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="${index * 150}" class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 lg:p-10 transition-colors duration-300">
                 <div class="flex flex-wrap gap-2 mb-6">
                     ${project.tags.map(tag => `<span class="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold px-3 py-1 rounded-md transition-colors">${tag}</span>`).join('')}
                 </div>
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Render Skills Section
     const skillsContainer = document.getElementById('skills-container');
     if (skillsContainer) {
-        skillsContainer.innerHTML = portfolioData.skills.map(skillGroup => `
-            <div class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 transition-colors duration-300">
+        skillsContainer.innerHTML = portfolioData.skills.map((skillGroup, index) => `
+            <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="${index * 100}" class="border border-gray-200 dark:border-gray-800 rounded-2xl bg-white dark:bg-gray-900 p-8 transition-colors duration-300">
                 <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400 tracking-widest uppercase mb-6">${skillGroup.category}</h3>
                 <div class="flex flex-wrap gap-3">
                     ${skillGroup.items.map(item => `<span class="border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 px-4 py-1.5 rounded-full text-sm transition-colors">${item}</span>`).join('')}
@@ -104,8 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Render Certifications
     const certsContainer = document.getElementById('certifications-container');
     if (certsContainer) {
-        certsContainer.innerHTML = portfolioData.certifications.map(cert => `
-            <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300 transition-colors">
+        certsContainer.innerHTML = portfolioData.certifications.map((cert, index) => `
+            <div data-aos="fade-left" data-aos-duration="600" data-aos-delay="${index * 100}" class="flex items-center gap-3 text-gray-700 dark:text-gray-300 transition-colors">
                 <i data-lucide="award" class="w-5 h-5 text-blue-500"></i> ${cert}
             </div>
         `).join('');
@@ -138,5 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Re-initialize Lucide icons since we just modified the DOM
     if (window.lucide) {
         window.lucide.createIcons();
+    }
+
+    // Initialize AOS animations
+    if (window.AOS) {
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
     }
 });
